@@ -3,13 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Vibe</title>
+  <title>Золоті сторінки | Українська література</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Привіт! Мій сайт працює 🎉</h1>
-  <p>Це головна сторінка проєкту Site_vibe.</p>
+  <!-- Навігація -->
+  <header class="header">
+    <div class="logo">Слово & Форма</div>
+    <nav class="nav">
+      <a href="#about">Про проєкт</a>
+      <a href="#figures">Постаті</a>
+      <a href="#quote">Цитата дня</a>
+    </nav>
+  </header>
+
+  <!-- Головний екран (Hero) -->
+  <section class="hero">
+    <span class="badge">Культурна спадщина</span>
+    <h1>Українське слово, що творило націю</h1>
+    <p class="subtitle">Від барокових містерій та романтизму до модерних експериментів ХХ століття.</p>
+    <a href="#figures" class="btn">Дослідити постаті</a>
+  </section>
+
+  <!-- Блок карток діячів -->
+  <section class="container" id="figures">
+    <h2 class="section-title">Визначні автори</h2>
+    <div class="cards-grid">
+      
+      <div class="card">
+        <div class="card-tag">Просвітництво</div>
+        <h3>Григорій Сковорода</h3>
+        <p class="years">1722 – 1794</p>
+        <p class="desc">Філософ-мандрівник, поет і байкар. Творець концепції «сродної праці» та філософії серця.</p>
+        <div class="card-footer">Знаковий твір: <em>«Сад божественних пісень»</em></div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Романтизм / Реалізм</div>
+        <h3>Тарас Шевченко</h3>
+        <p class="years">1814 – 1861</p>
+        <p class="desc">Пророк української нації, поет і художник. Його слово стало духовним фундаментом нової України.</p>
+        <div class="card-footer">Знаковий твір: <em>«Кобзар»</em></div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Модернізм</div>
+        <h3>Леся Українка</h3>
+        <p class="years">1871 – 1913</p>
+        <p class="desc">Драматургиня європейського масштабу, поетеса незламності та психологічної глибини.</p>
+        <div class="card-footer">Знаковий твір: <em>«Лісова пісня»</em></div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Розстріляне відродження</div>
+        <h3>Микола Хвильовий</h3>
+        <p class="years">1893 – 1933</p>
+        <p class="desc">Лідер модерністського руху 1920-х років, гаслом якого було безапеляційне «Геть від Москви! Дайош Європу!».</p>
+        <div class="card-footer">Знаковий твір: <em>«Я (Романтика)»</em></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Інтерактивний блок цитати дня -->
+  <section class="container" id="quote">
+    <div class="quote-box">
+      <div class="quote-icon">“</div>
+      <p id="quote-text">«Любов виникає з любові; коли хочу, щоб мене любили, я сам перший люблю.»</p>
+      <span id="quote-author">— Григорій Сковорода</span>
+      <button id="next-quote-btn" class="btn-outline">Наступна думка</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Сайт розроблено на GitHub Pages • Присвячено силі українського слова</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
