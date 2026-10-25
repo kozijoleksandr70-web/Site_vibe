@@ -3,84 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Золоті сторінки | Українська література</title>
+  <title>Літопис Слова | Українська література</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Навігація -->
   <header class="header">
-    <div class="logo">Слово & Форма</div>
+    <div class="logo">Літопис <span>Слова</span></div>
     <nav class="nav">
-      <a href="#about">Про проєкт</a>
+      <a href="#epochs">Епохи</a>
       <a href="#figures">Постаті</a>
-      <a href="#quote">Цитата дня</a>
+      <a href="#themes">Сенси</a>
+      <a href="#quotes">Афоризми</a>
     </nav>
   </header>
 
-  <!-- Головний екран (Hero) -->
+  <!-- Головний екран -->
   <section class="hero">
-    <span class="badge">Культурна спадщина</span>
-    <h1>Українське слово, що творило націю</h1>
-    <p class="subtitle">Від барокових містерій та романтизму до модерних експериментів ХХ століття.</p>
-    <a href="#figures" class="btn">Дослідити постаті</a>
+    <div class="badge">Культурний простір</div>
+    <h1>Генетичний код українського слова</h1>
+    <p class="subtitle">Від філософських садів Сковороди та бунтарського романтизму до модерних пошуків європейської України. Досліджуйте історію, що витримала століття цензури та репресій.</p>
+    
+    <div class="hero-actions">
+      <a href="#figures" class="btn btn-primary">Постаті літератури</a>
+      <a href="#epochs" class="btn btn-secondary">Огляд епох</a>
+    </div>
+
+    <!-- Статистика -->
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-number">1000+</span>
+        <span class="stat-label">років писемної традиції</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">5</span>
+        <span class="stat-label">ключових літературних діб</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">∞</span>
+        <span class="stat-label">незламних голосів</span>
+      </div>
+    </div>
   </section>
 
-  <!-- Блок карток діячів -->
+  <!-- Розділ: Епохи та напрями -->
+  <section class="container" id="epochs">
+    <div class="section-header">
+      <span class="section-kicker">Шлях крізь час</span>
+      <h2 class="section-title">Літературні періоди</h2>
+      <p class="section-desc">Кожна доба відповідала на власні виклики: пошук істини, боротьба за мову чи право бути частиною світового модернізму.</p>
+    </div>
+
+    <div class="epochs-grid">
+      <div class="epoch-card">
+        <span class="epoch-year">XI – XVIII ст.</span>
+        <h3>Давня доба та Бароко</h3>
+        <p>Літописи Русі, полемічна література, козацькі пісні та філософія любомудрія. Час становлення самобутності та барокової гри сенсів.</p>
+        <span class="epoch-lead">Головний голос: <strong>Григорій Сковорода</strong></span>
+      </div>
+
+      <div class="epoch-card highlight">
+        <span class="epoch-year">XIX ст.</span>
+        <h3>Національне відродження</h3>
+        <p>Поява живої розмовної мови в «Енеїді», спалах романтизму й формування політичної свідомості нації через «Кобзар».</p>
+        <span class="epoch-lead">Головні голоси: <strong>Котляревський, Шевченко, Франко</strong></span>
+      </div>
+
+      <div class="epoch-card">
+        <span class="epoch-year">Кінець XIX – поч. XX ст.</span>
+        <h3>Модернізм та Неоромантизм</h3>
+        <p>Вихід за межі побутово-етнографічного письма, інтелектуалізація образів, психологізм, інтеграція в європейський контекст.</p>
+        <span class="epoch-lead">Головні голоси: <strong>Леся Українка, Коцюбинський, Кобилянська</strong></span>
+      </div>
+
+      <div class="epoch-card">
+        <span class="epoch-year">1920-ті роки</span>
+        <h3>Розстріляне відродження</h3>
+        <p>Авангардний вибух стилів: урбанізм, кібернетика образу, експресіонізм і трагічна ціна вільного вибору перед тоталітаризмом.</p>
+        <span class="epoch-lead">Головні голоси: <strong>Хвильовий, Підмогильний, Зеров</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Розділ: Ключові постаті -->
   <section class="container" id="figures">
-    <h2 class="section-title">Визначні автори</h2>
+    <div class="section-header">
+      <span class="section-kicker">Обличчя нації</span>
+      <h2 class="section-title">Визначні автори та їхній спадок</h2>
+      <p class="section-desc">Творці, чиї тексти формували мислення поколінь і тримали духовний фронт.</p>
+    </div>
+
     <div class="cards-grid">
-      
-      <div class="card">
-        <div class="card-tag">Просвітництво</div>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="tag">Бароко & Філософія</span>
+          <span class="date">1722 – 1794</span>
+        </div>
         <h3>Григорій Сковорода</h3>
-        <p class="years">1722 – 1794</p>
-        <p class="desc">Філософ-мандрівник, поет і байкар. Творець концепції «сродної праці» та філософії серця.</p>
-        <div class="card-footer">Знаковий твір: <em>«Сад божественних пісень»</em></div>
-      </div>
+        <p class="card-quote">«Світ ловив мене, та не спіймав.»</p>
+        <p class="card-body">Мандрівний мислитель, родоначальник української філософії серця («кордоцентризму»). Відмовився від церковних та світських кар'єр на користь особистої внутрішньої свободи.</p>
+        <div class="card-bottom">
+          <small>Знакові тексти:</small>
+          <span>«Сад божественних пісень», «Байки харківські»</span>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="card-tag">Романтизм / Реалізм</div>
+      <article class="card">
+        <div class="card-meta">
+          <span class="tag">Романтизм & Пророцтво</span>
+          <span class="date">1814 – 1861</span>
+        </div>
         <h3>Тарас Шевченко</h3>
-        <p class="years">1814 – 1861</p>
-        <p class="desc">Пророк української нації, поет і художник. Його слово стало духовним фундаментом нової України.</p>
-        <div class="card-footer">Знаковий твір: <em>«Кобзар»</em></div>
-      </div>
+        <p class="card-quote">«В своїй хаті своя й правда, і сила, і воля.»</p>
+        <p class="card-body">Творець нової національної свідомості. Вивів мову з рівня просторіччя до високої світової поезії, об'єднавши художній живопис та слово у місію свободи.</p>
+        <div class="card-bottom">
+          <small>Знакові тексти:</small>
+          <span>«Кобзар», «І мертвим, і живим...», «Кавказ»</span>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="card-tag">Модернізм</div>
+      <article class="card">
+        <div class="card-meta">
+          <span class="tag">Модерна драма</span>
+          <span class="date">1871 – 1913</span>
+        </div>
         <h3>Леся Українка</h3>
-        <p class="years">1871 – 1913</p>
-        <p class="desc">Драматургиня європейського масштабу, поетеса незламності та психологічної глибини.</p>
-        <div class="card-footer">Знаковий твір: <em>«Лісова пісня»</em></div>
-      </div>
+        <p class="card-quote">«Щоб не плакать, я сміялась.»</p>
+        <p class="card-body">Інтелектуалка світового рівня, поліглотка, авторка філософських поем та драм, що переосмислили античні, біблійні та фольклорні міфи крізь призму гідності й суверенітету волі.</p>
+        <div class="card-bottom">
+          <small>Знакові тексти:</small>
+          <span>«Лісова пісня», «Кассандра», «Бояриня»</span>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="card-tag">Розстріляне відродження</div>
-        <h3>Микола Хвильовий</h3>
-        <p class="years">1893 – 1933</p>
-        <p class="desc">Лідер модерністського руху 1920-х років, гаслом якого було безапеляційне «Геть від Москви! Дайош Європу!».</p>
-        <div class="card-footer">Знаковий твір: <em>«Я (Романтика)»</em></div>
-      </div>
+      <article class="card">
+        <div class="card-meta">
+          <span class="tag">Психологічний імпресіонізм</span>
+          <span class="date">1864 – 1913</span>
+        </div>
+        <h3>Михайло Коцюбинський</h3>
+        <p class="card-quote">«Я бачу світ крізь серпанок краси і сонця.»</p>
+        <p class="card-body">«Сонцепоклонник» української новелістики. Майстер світлотіні, настрою та психологічного занурення в людську підсвідомість і таємниці гуцульських гір.</p>
+        <div class="card-bottom">
+          <small>Знакові тексти:</small>
+          <span>«Intermezzo», «Тіні забутих предків»</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="tag">Урбаністичний роман</span>
+          <span class="date">1901 – 1937</span>
+        </div>
+        <h3>Валер'ян Підмогильний</h3>
+        <p class="card-quote">«Місто чекає на сміливих і спраглих життя.»</p>
+        <p class="card-body">Автор першого справжнього модерного роману про завоювання міста людиною села. Психоаналітик, перекладач французької класики, знищений режимом на Соловках.</p>
+        <div class="card-bottom">
+          <small>Знакові тексти:</small>
+          <span>«Місто», «Невеличка драма»</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="tag">Неокласицизм</span>
+          <span class="date">1890 – 1937</span>
+        </div>
+        <h3>Микола Зеров</h3>
+        <p class="card-quote">«Класична пластика і строгість думки.»</p>
+        <p class="card-body">Лідер київських «неокласиків». Естет, перекладач латинських поетів, професор, який вимагав від літератури найвищої фахової майстерності та звернення до європейських джерел.</p>
+        <div class="card-bottom">
+          <small>Знакові тексти:</small>
+          <span>Збірка сонетів «Камена», «Антологія римської поезії»</span>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <!-- Інтерактивний блок цитати дня -->
-  <section class="container" id="quote">
-    <div class="quote-box">
-      <div class="quote-icon">“</div>
-      <p id="quote-text">«Любов виникає з любові; коли хочу, щоб мене любили, я сам перший люблю.»</p>
+  <!-- Розділ: Сенси та наскрізні ідеї -->
+  <section class="container" id="themes">
+    <div class="section-header">
+      <span class="section-kicker">Глибина</span>
+      <h2 class="section-title">Чому це варто читати сьогодні</h2>
+    </div>
+
+    <div class="themes-grid">
+      <div class="theme-box">
+        <div class="theme-icon">📜</div>
+        <h4>Сродна праця та покликання</h4>
+        <p>Ідея Сковороди про те, що людина може бути щасливою лише тоді, коли займається справою за внутрішнім хистом, а не заради моди чи багатства.</p>
+      </div>
+
+      <div class="theme-box">
+        <div class="theme-icon">⚔️</div>
+        <h4>Спротив і внутрішня суб'єктність</h4>
+        <p>Українська література ніколи не була салонною розвагою — вона завжди була простором відстоювання права на існування та свободу думки.</p>
+      </div>
+
+      <div class="theme-box">
+        <div class="theme-icon">🌍</div>
+        <h4>Європейський вектор</h4>
+        <p>Від листувань Лесі Українки до памфлетів Хвильового — наше письменство послідовно тримало орієнтир на світову культурну традицію.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Інтерактивний блок афоризмів -->
+  <section class="container" id="quotes">
+    <div class="quote-card">
+      <span class="quote-symbol">«</span>
+      <p id="quote-text">Любов виникає з любові; коли хочу, щоб мене любили, я сам перший люблю.</p>
       <span id="quote-author">— Григорій Сковорода</span>
-      <button id="next-quote-btn" class="btn-outline">Наступна думка</button>
+      <div class="quote-action">
+        <button id="next-quote-btn" class="btn btn-primary">Читати іншу думку</button>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Сайт розроблено на GitHub Pages • Присвячено силі українського слова</p>
+  <!-- Підвал -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">Літопис <span>Слова</span></div>
+      <p>Освітній веб-проєкт, створений за допомогою GitHub Pages.<br>Досліджуйте українську літературу без стереотипів.</p>
+      <div class="footer-meta">© 2026 Всі матеріали у вільному доступі для вивчення</div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
