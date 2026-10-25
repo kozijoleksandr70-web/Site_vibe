@@ -1,12 +1,19 @@
+/* М'яка, тепла книжкова палітра */
 :root {
-  --bg-main: #0d1117;
-  --bg-surface: #161b22;
-  --bg-card: #1c2128;
-  --border-color: #30363d;
-  --text-main: #f0f6fc;
-  --text-muted: #8b949e;
-  --accent-gold: #e3b341;
-  --accent-hover: #f7c95c;
+  --bg-base: #f9f7f2;         /* Ніжний колір теплого паперу */
+  --bg-card: #ffffff;         /* Чистий світлий колір блоків */
+  --bg-card-subtle: #f3efe6;  /* М'який бежево-льняний відтінок */
+  --border-soft: #e5ded3;     /* Тонка натуральна рамка */
+  --border-strong: #d2c5b3;
+  --text-main: #242220;       /* Глибокий чорнильно-графітовий колір */
+  --text-muted: #6b665f;      /* Приглушений газетний шрифт */
+  --accent-terracotta: #b85d38; /* Теплий теракотовий акцент */
+  --accent-gold: #c28b38;       /* М'яке античне золото */
+  --accent-hover: #9e4c2b;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --shadow-sm: 0 4px 12px rgba(46, 38, 25, 0.04);
+  --shadow-hover: 0 12px 24px rgba(46, 38, 25, 0.08);
 }
 
 * {
@@ -15,219 +22,472 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  line-height: 1.6;
+html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Шапка */
 .header {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
-  background-color: rgba(13, 17, 23, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  z-index: 100;
+  padding: 1.1rem 5%;
+  background-color: rgba(249, 247, 242, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+  z-index: 1000;
 }
 
 .logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--accent-gold);
-  letter-spacing: 1px;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--accent-terracotta);
+  font-style: italic;
 }
 
 .nav a {
   color: var(--text-muted);
   text-decoration: none;
-  margin-left: 1.5rem;
+  margin-left: 2rem;
   font-size: 0.95rem;
+  font-weight: 500;
   transition: color 0.2s;
 }
 
 .nav a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-terracotta);
 }
 
+/* Hero секція */
 .hero {
   text-align: center;
   padding: 5rem 1.5rem 3.5rem;
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
 .badge {
   display: inline-block;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.75rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  background-color: rgba(227, 179, 65, 0.12);
-  color: var(--accent-gold);
-  border: 1px solid rgba(227, 179, 65, 0.3);
-  border-radius: 20px;
-  margin-bottom: 1.2rem;
+  letter-spacing: 1.5px;
+  background-color: #f0e9dc;
+  color: var(--accent-terracotta);
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
 }
 
 .hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
   font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 1rem;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  color: var(--text-main);
+  margin-bottom: 1.4rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 auto 2.2rem;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
 }
 
 .btn {
   display: inline-block;
-  background-color: var(--accent-gold);
-  color: #0b0e14;
-  padding: 0.75rem 1.8rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
 }
 
-.btn:hover {
+.btn-primary {
+  background-color: var(--accent-terracotta);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
   background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(184, 93, 56, 0.25);
+}
+
+.btn-secondary {
+  background-color: #ede6d8;
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  background-color: #e2d9c7;
   transform: translateY(-2px);
 }
 
-.container {
-  max-width: 1100px;
+/* Статистика */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 38px;
+  background-color: var(--border-soft);
+}
+
+/* Контейнери та заголовки */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.section-kicker {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: var(--accent-gold);
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
 }
 
-.cards-grid {
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 0.6rem;
+}
+
+/* Епохи */
+.epochs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
-.card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
+.epoch-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
   border-radius: 12px;
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.3s, transform 0.3s;
+  padding: 1.8rem;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
-.card:hover {
-  border-color: var(--accent-gold);
+.epoch-card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
-.card-tag {
-  font-size: 0.75rem;
+.epoch-card.highlight {
+  border-left: 4px solid var(--accent-terracotta);
+}
+
+.epoch-year {
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--accent-gold);
-  font-weight: 600;
   text-transform: uppercase;
+  display: block;
   margin-bottom: 0.5rem;
 }
 
-.card h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.2rem;
+.epoch-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  margin-bottom: 0.8rem;
 }
 
-.card .years {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.9rem;
-}
-
-.card .desc {
+.epoch-card p {
   font-size: 0.92rem;
-  color: #c9d1d9;
-  flex-grow: 1;
+  color: var(--text-muted);
   margin-bottom: 1.2rem;
 }
 
-.card-footer {
+.epoch-lead {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-color);
+  display: block;
   padding-top: 0.8rem;
+  border-top: 1px dashed var(--border-soft);
+  color: var(--text-main);
 }
 
-.quote-box {
-  background: linear-gradient(145deg, #161b22, #1c2128);
-  border: 1px solid var(--border-color);
+/* Картки авторів */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+  background: #fbf0ea;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.card-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.9rem;
+}
+
+.card-body {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex-grow: 1;
+  margin-bottom: 1.4rem;
+}
+
+.card-bottom {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.card-bottom small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.card-bottom span {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Блок сенсів */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.theme-box {
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.theme-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.theme-box h4 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.theme-box p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* Блок цитати */
+.quote-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
   border-radius: 16px;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2.5rem;
   text-align: center;
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto;
+  box-shadow: var(--shadow-sm);
   position: relative;
 }
 
-.quote-icon {
-  font-family: 'Cormorant Garamond', serif;
+.quote-symbol {
+  font-family: var(--font-serif);
   font-size: 5rem;
   line-height: 1;
-  color: var(--accent-gold);
-  opacity: 0.3;
-  margin-bottom: -1.5rem;
+  color: var(--accent-terracotta);
+  opacity: 0.2;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
 }
 
 #quote-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
   font-style: italic;
-  margin-bottom: 1rem;
+  line-height: 1.4;
+  color: var(--text-main);
+  margin-bottom: 1.2rem;
 }
 
 #quote-author {
   display: block;
   font-size: 0.95rem;
-  color: var(--accent-gold);
-  margin-bottom: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-terracotta);
+  margin-bottom: 2rem;
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-outline:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-}
-
-footer {
+/* Підвал */
+.footer {
+  background-color: #f1ebd8;
+  border-top: 1px solid var(--border-soft);
+  padding: 3.5rem 1.5rem;
   text-align: center;
-  padding: 2.5rem 1rem;
-  font-size: 0.85rem;
+  margin-top: 4rem;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.footer-logo span {
+  color: var(--accent-terracotta);
+  font-style: italic;
+}
+
+.footer p {
   color: var(--text-muted);
-  border-top: 1px solid var(--border-color);
-  margin-top: 3rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-meta {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #8c857b;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .nav a {
+    margin: 0 0.8rem;
+  }
+  .stats-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .stat-divider {
+    display: none;
+  }
 }
