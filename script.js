@@ -1,23 +1,27 @@
 const quotes = [
   {
-    text: "«Любов виникає з любові; коли хочу, щоб мене любили, я сам перший люблю.»",
+    text: "Любов виникає з любові; коли хочу, щоб мене любили, я сам перший люблю.",
     author: "— Григорій Сковорода"
   },
   {
-    text: "«Борітеся — поборете, вам Бог помагає! За вас правда, за вас слава і воля святая!»",
+    text: "Борітеся — поборете! Вам Бог помагає! За вас правда, за вас слава і воля святая!",
     author: "— Тарас Шевченко"
   },
   {
-    text: "«Ні, я жива! Я буду вічно жити! Я в серці маю те, що не вмирає.»",
+    text: "Ні, я жива! Я буду вічно жити! Я в серці маю те, що не вмирає.",
     author: "— Леся Українка"
   },
   {
-    text: "«Шукайте цензора в собі. Він там живе, дрімучий, безпардонний.»",
-    author: "— Ліна Костенко"
+    text: "Я бачу світ крізь серпанок краси і сонця, бо краса рятує людину від буденності.",
+    author: "— Михайло Коцюбинський"
   },
   {
-    text: "«А ви думали, що Україна так просто? Україна — це супер! Україна — це ексклюзив.»",
-    author: "— Ліна Костенко"
+    text: "Місто чекає на сміливих і спраглих життя, воно забирає сили, але дарує крила.",
+    author: "— Валер'ян Підмогильний"
+  },
+  {
+    text: "Класична пластика і строгість думки — ось захист від хаосу епохи.",
+    author: "— Микола Зеров"
   }
 ];
 
@@ -29,7 +33,14 @@ const nextBtn = document.getElementById("next-quote-btn");
 if (nextBtn) {
   nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % quotes.length;
-    quoteText.textContent = quotes[currentIndex].text;
-    quoteAuthor.textContent = quotes[currentIndex].author;
+    quoteText.style.opacity = 0;
+    quoteAuthor.style.opacity = 0;
+    
+    setTimeout(() => {
+      quoteText.textContent = quotes[currentIndex].text;
+      quoteAuthor.textContent = quotes[currentIndex].author;
+      quoteText.style.opacity = 1;
+      quoteAuthor.style.opacity = 1;
+    }, 200);
   });
 }
